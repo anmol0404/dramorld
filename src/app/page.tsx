@@ -91,7 +91,7 @@ const Home = () => {
   return (
     <main className="container mx-auto p-4 md:p-6 lg:p-8 max-w-screen-xl">
       <div className="flex justify-end md:justify-center lg:justify-center xl:justify-center mb-6">
-        <div className="relative w-3/5 sm:w-2/3 md:w-full max-w-md">
+        <div className="ml-8 relative w-3/5 sm:w-1/3 md:w-full max-w-md">
           <input
             type="text"
             value={searchTerm}
@@ -100,7 +100,7 @@ const Home = () => {
             className="w-full p-2 mt-2 pl-12 border border-gray-300 rounded-lg bg-transparent shadow-sm focus:ring-2 focus:ring-blue-400"
           />
           <MdSearch
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+            className="absolute mt-1 left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
             size={24}
           />
         </div>

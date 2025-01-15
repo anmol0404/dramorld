@@ -16,7 +16,8 @@ const DramaDetailPage = ({ params }: DramaPageProps) => {
   const [drama, setDrama] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const downloadLink = `https://t.me/infinitedramabot?start=${id}-eng`;
+  const [isImageLoading, setIsImageLoading] = useState(true); // Image loading state
+  const downloadLink = `https://t.me/{infinitedramabot}?start=${id}-eng`;
 
   useEffect(() => {
     const fetchDrama = async () => {
@@ -64,21 +65,25 @@ const DramaDetailPage = ({ params }: DramaPageProps) => {
             minWidth: "90vw",
           }}
         >
-          {/* Background Blur */}
           <div
-            className="absolute inset-0 -z-10"
+            className="absolute inset-0 -z-10 shadow-2xl rounded-lg"
             style={{
               backgroundImage: `url(${
                 drama.posterUrl || "https://i.mydramalist.com/YYnYDA_2f.png"
               })`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "blur(20px)",
+              filter: "blur(10px)",
               transform: "scale(1.1)", // Slightly zoom to avoid edges being visible
             }}
           ></div>
 
           {/* Foreground Image */}
+          {isImageLoading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+              <Loader /> {/* Spinner or Skeleton */}
+            </div>
+          )}
           <Image
             className="rounded-lg object-contain relative"
             alt={drama.detail}
@@ -86,6 +91,7 @@ const DramaDetailPage = ({ params }: DramaPageProps) => {
             layout="fill"
             objectFit="contain"
             priority
+            onLoad={() => setIsImageLoading(false)} // Handle image load
           />
         </div>
         <div className="bg-gray-100 text-gray-700 text-xs mb-4 mx-2 border border-gray-300 p-4 rounded-md shadow-sm">

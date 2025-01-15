@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Drama } from "@/interface/Drama";
 import Image from "next/image";
 import Link from "next/link";
 
 const DramaCard = ({ drama }: { drama: Drama }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="border border-gray-300 shadow-md rounded-lg overflow-hidden flex flex-col h-full">
       <div className="p-4 flex flex-col md:flex-row gap-3 h-full">
@@ -12,21 +15,27 @@ const DramaCard = ({ drama }: { drama: Drama }) => {
         >
           <Link href={`/dramas/${drama.shareId}`}>
             <div className="relative h-full w-full m-2 hover:scale-102 transition duration-3000">
+              {isLoading && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+              )}
               <Image
-                className="rounded-lg object-cover w-full h-full"
+                className={`rounded-lg object-cover w-full h-full transition-opacity duration-300 ${
+                  isLoading ? "opacity-20" : "opacity-100"
+                }`}
                 alt={drama.title}
                 src={drama.posterUrl}
                 layout="responsive"
                 width={500}
                 height={750}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "fill" }}
                 priority
+                onLoadingComplete={() => setIsLoading(false)}
               />
             </div>
 
-            <div className="md:hidden absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0  hover:opacity-100 transition-opacity">
-              <div className="ml-4 p-3 bg-slate-100 bg-opacity-90 text-gray-800 text-sm mb-2 border border-gray-200  rounded-md shadow-sm">
+            <div className="md:hidden absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+              <div className="ml-4 p-3 bg-slate-100 bg-opacity-90 text-gray-800 text-sm mb-2 border border-gray-200 rounded-md shadow-sm">
                 <h2 className="text-lg font-bold text-gray-800 mb-3 line-clamp-3">
                   {drama.title}
                 </h2>

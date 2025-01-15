@@ -66,7 +66,7 @@ export default function Nav() {
               <Link
                 key={route.title}
                 href={route.path}
-                className={`text-lg text-gray-400 flex items-center justify-center shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-md border-l-4 border-transparent hover:text-white hover:bg-gray-500 hover:scale-105 ${
+                className={`text-lg text-gray-400 flex items-center justify-center shadow-lg transition-all duration-300 ease-in-out px-2 py-2 rounded-md border-l-4 border-transparent hover:text-white hover:bg-gray-500 hover:scale-105 ${
                   route.pathRegex.test(pathname)
                     ? "active text-green-500 border-l-blue-500 scale-105"
                     : ""
