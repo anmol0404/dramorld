@@ -89,18 +89,18 @@ const Home = () => {
   const handlePrevPage = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
 
   return (
-    <main className="container mx-auto p-4 md:p-6 lg:p-8 max-w-screen-xl">
-      <div className="flex justify-end md:justify-center lg:justify-center xl:justify-center mb-6">
+    <main className="container md:p-6 lg:p-8 max-w-screen-xl">
+      <div className="flex justify-end sm:justify-end md:justify-center lg:justify-center xl:justify-center mb-6">
         <div className="ml-8 relative w-3/5 sm:w-1/3 md:w-full max-w-md">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search"
-            className="w-full p-2 mt-2 pl-12 border border-gray-300 rounded-lg bg-transparent shadow-sm focus:ring-2 focus:ring-blue-400"
+            className="w-full p-1 my-2 ml-5 pl-12 border border-gray-300 rounded-lg bg-transparent shadow-sm focus:ring-2 focus:ring-blue-400"
           />
           <MdSearch
-            className="absolute mt-1 left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+            className="absolute ml-4 left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
             size={24}
           />
         </div>

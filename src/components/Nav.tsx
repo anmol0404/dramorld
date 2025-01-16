@@ -49,7 +49,7 @@ export default function Nav() {
   return (
     <>
       <button
-        className="lg:hidden p-4 text-3xl fixed z-30 top-4 left-1"
+        className="lg:hidden p-2 text-3xl fixed z-30 left-1"
         onClick={toggleSidebar}
       >
         {isSidebarOpen ? <MdClose /> : <MdMenu />}

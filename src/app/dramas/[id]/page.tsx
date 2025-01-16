@@ -16,8 +16,8 @@ const DramaDetailPage = ({ params }: DramaPageProps) => {
   const [drama, setDrama] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isImageLoading, setIsImageLoading] = useState(true); // Image loading state
-  const downloadLink = `https://t.me/{infinitedramabot}?start=${id}-eng`;
+  const [isImageLoading, setIsImageLoading] = useState(true);
+  const downloadLink = `https://t.me/infinitedramabot?start=${id}-eng`;
 
   useEffect(() => {
     const fetchDrama = async () => {

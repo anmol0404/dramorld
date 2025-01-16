@@ -1,1 +1,1 @@
-{"version":1,"functions":{"/api/bot/aio/[id]":{},"/api/bot/aio/search":{},"/api/bot/ongoing":{},"/api/dramas":{},"/api/bot/aio/save":{},"/api/dramas/[id]":{},"/api/movies/[id]":{},"/api/movies":{},"/api/bot/users.ts":{},"/api/bot/aio":{}}}
+{"version":1,"functions":{"/api/bot/aio/[id]":{},"/api/bot/users.ts":{},"/api/bot/ongoing":{},"/api/bot/aio":{},"/api/movies/[id]":{},"/api/dramas/[id]":{},"/api/bot/aio/search":{},"/api/dramas":{},"/api/bot/aio/save":{},"/api/movies":{}}}

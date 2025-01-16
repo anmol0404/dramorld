@@ -21,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} relative w-full min-h-screen`}>
-        <header className="fixed bg-gray-800 hover:bg-gray-500 px-2 rounded-sm top-8 left-14 lg:left-6 z-20 transition-colors duration-300 ease-in-out">
+        <header className="fixed bg-gray-800 hover:bg-gray-500 px-1 rounded-sm mt-3 left-14 lg:left-6 z-20 transition-colors duration-300 ease-in-out">
           <Link href="/" className="block">
             <span
-              className="text-lg font-semibold bg-clip-text shadow-sm"
+              className="text-base  font-semibold bg-clip-text shadow-sm"
               style={{
                 background: "linear-gradient(20deg, #3bd3eb, #07c346)",
                 WebkitBackgroundClip: "text",
